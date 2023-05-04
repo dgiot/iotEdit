@@ -70,142 +70,154 @@ const actions = {
     _defaultRoutes.push(defaultRoutes)
     let routes = [...asyncRoutes]
     // 设置后端路由(不需要可以删除)
-    // let { results } = await getRouterList() //通过接口获取，动态路由菜单栏
-    let results = [
-      {
-        "children": [
-          {
-            "icon": "code-box-fill",
-            "meta": {
-              "alwaysShow": false,
-              "badge": "",
-              "component": "@/views/CloudFunction/lowcode/index",
-              "hidden": false,
-              "icon": "code-box-fill",
-              "noClosable": false,
-              "noKeepAlive": false,
-              "redirect": "",
-              "tabHidden": false,
-              "title": "视图管理"
-            },
-            "name": "AmisLowCode",
-            "url": "/design"
-          },
-          {
-            "icon": "home-3-fill",
-            "meta": {
-              "alwaysShow": false,
-              "badge": "",
-              "component": "@/views/CloudOc/AmisPage/viewgit",
-              "hidden": true,
-              "icon": "home-3-fill",
-              "isAmis": false,
-              "isCustomSvg": false,
-              "noClosable": false,
-              "noKeepAlive": false,
-              "redirect": "",
-              "tabHidden": false,
-              "title": "视图日志记录",
-              "viewid": ""
-            },
-            "name": "ViewGit",
-            "url": "/viewgit"
-          },
-          {
-            "icon": "home-3-fill",
-            "meta": {
-              "alwaysShow": false,
-              "badge": "",
-              "component": "@/views/CloudOc/AmisPage/viewtemplate",
-              "hidden": true,
-              "icon": "home-3-fill",
-              "isAmis": false,
-              "isCustomSvg": false,
-              "noClosable": false,
-              "noKeepAlive": false,
-              "redirect": "",
-              "tabHidden": false,
-              "title": "视图模板替换",
-              "viewid": ""
-            },
-            "name": "AmisViewTemplate",
-            "url": "/viewtemplate"
-          },
-          {
-            "icon": "home-3-fill",
-            "meta": {
-              "alwaysShow": false,
-              "badge": "",
-              "component": "@/views/CloudFunction/topo/index",
-              "hidden": true,
-              "icon": "home-3-fill",
-              "isAmis": false,
-              "isCustomSvg": false,
-              "noClosable": false,
-              "noKeepAlive": false,
-              "redirect": "",
-              "tabHidden": false,
-              "title": "组态大屏",
-              "viewid": ""
-            },
-            "name": "AmisKonvaScreen",
-            "url": "/Topo"
-          },
-          {
-            "icon": "home-3-fill",
-            "meta": {
-              "alwaysShow": false,
-              "badge": "",
-              "component": "@/views/CloudFunction/amis/editor",
-              "hidden": true,
-              "icon": "home-3-fill",
-              "isCustomSvg": false,
-              "noClosable": false,
-              "noKeepAlive": false,
-              "redirect": "",
-              "tabHidden": false,
-              "title": "amis编辑器"
-            },
-            "name": "AmisDgiotEditor",
-            "url": "/design/editor/amis"
-          },
-          {
-            "icon": "home-3-fill",
-            "meta": {
-              "alwaysShow": false,
-              "badge": "",
-              "component": "@/views/CloudFunction/topo/editor",
-              "hidden": true,
-              "icon": "home-3-fill",
-              "isCustomSvg": false,
-              "noClosable": false,
-              "noKeepAlive": false,
-              "redirect": "",
-              "tabHidden": false,
-              "title": "组态编辑器"
-            },
-            "name": "AmisTopoEditor",
-            "url": "/design/editor/topo"
-          }
-        ],
-        "icon": "home-3-fill",
-        "meta": {
-          "alwaysShow": false,
-          "badge": "",
-          "component": "Layout",
-          "hidden": false,
-          "icon": "home-3-fill",
-          "isCustomSvg": false,
-          "noClosable": false,
-          "noKeepAlive": false,
-          "redirect": "/baseamis",
-          "tabHidden": false,
-          "title": "低代码"
-        },
-        "name": "AmisManage",
-        "url": "/baseamis"
+    let { results } = await getRouterList() //通过接口获取，动态路由菜单栏
+    let list = []
+    results.forEach(item => {
+      if (item.url == "/" || item.url == "/baseamis") {
+        list.push(item)
+      } else if (item.children) {
+        if (
+          item.children[0].url.indexOf("amis") >= 0
+        ) {
+          list.push(item);
+        }
       }
-    ]
+    })
+    // let results = [
+    //   {
+    //     "children": [
+    //       {
+    //         "icon": "code-box-fill",
+    //         "meta": {
+    //           "alwaysShow": false,
+    //           "badge": "",
+    //           "component": "@/views/CloudFunction/lowcode/index",
+    //           "hidden": false,
+    //           "icon": "code-box-fill",
+    //           "noClosable": false,
+    //           "noKeepAlive": false,
+    //           "redirect": "",
+    //           "tabHidden": false,
+    //           "title": "视图管理"
+    //         },
+    //         "name": "AmisLowCode",
+    //         "url": "/design"
+    //       },
+    //       {
+    //         "icon": "home-3-fill",
+    //         "meta": {
+    //           "alwaysShow": false,
+    //           "badge": "",
+    //           "component": "@/views/CloudOc/AmisPage/viewgit",
+    //           "hidden": true,
+    //           "icon": "home-3-fill",
+    //           "isAmis": false,
+    //           "isCustomSvg": false,
+    //           "noClosable": false,
+    //           "noKeepAlive": false,
+    //           "redirect": "",
+    //           "tabHidden": false,
+    //           "title": "视图日志记录",
+    //           "viewid": ""
+    //         },
+    //         "name": "ViewGit",
+    //         "url": "/viewgit"
+    //       },
+    //       {
+    //         "icon": "home-3-fill",
+    //         "meta": {
+    //           "alwaysShow": false,
+    //           "badge": "",
+    //           "component": "@/views/CloudOc/AmisPage/viewtemplate",
+    //           "hidden": true,
+    //           "icon": "home-3-fill",
+    //           "isAmis": false,
+    //           "isCustomSvg": false,
+    //           "noClosable": false,
+    //           "noKeepAlive": false,
+    //           "redirect": "",
+    //           "tabHidden": false,
+    //           "title": "视图模板替换",
+    //           "viewid": ""
+    //         },
+    //         "name": "AmisViewTemplate",
+    //         "url": "/viewtemplate"
+    //       },
+    //       {
+    //         "icon": "home-3-fill",
+    //         "meta": {
+    //           "alwaysShow": false,
+    //           "badge": "",
+    //           "component": "@/views/CloudFunction/topo/index",
+    //           "hidden": true,
+    //           "icon": "home-3-fill",
+    //           "isAmis": false,
+    //           "isCustomSvg": false,
+    //           "noClosable": false,
+    //           "noKeepAlive": false,
+    //           "redirect": "",
+    //           "tabHidden": false,
+    //           "title": "组态大屏",
+    //           "viewid": ""
+    //         },
+    //         "name": "AmisKonvaScreen",
+    //         "url": "/Topo"
+    //       },
+    //       {
+    //         "icon": "home-3-fill",
+    //         "meta": {
+    //           "alwaysShow": false,
+    //           "badge": "",
+    //           "component": "@/views/CloudFunction/amis/editor",
+    //           "hidden": true,
+    //           "icon": "home-3-fill",
+    //           "isCustomSvg": false,
+    //           "noClosable": false,
+    //           "noKeepAlive": false,
+    //           "redirect": "",
+    //           "tabHidden": false,
+    //           "title": "amis编辑器"
+    //         },
+    //         "name": "AmisDgiotEditor",
+    //         "url": "/design/editor/amis"
+    //       },
+    //       {
+    //         "icon": "home-3-fill",
+    //         "meta": {
+    //           "alwaysShow": false,
+    //           "badge": "",
+    //           "component": "@/views/CloudFunction/topo/editor",
+    //           "hidden": true,
+    //           "icon": "home-3-fill",
+    //           "isCustomSvg": false,
+    //           "noClosable": false,
+    //           "noKeepAlive": false,
+    //           "redirect": "",
+    //           "tabHidden": false,
+    //           "title": "组态编辑器"
+    //         },
+    //         "name": "AmisTopoEditor",
+    //         "url": "/design/editor/topo"
+    //       }
+    //     ],
+    //     "icon": "home-3-fill",
+    //     "meta": {
+    //       "alwaysShow": false,
+    //       "badge": "",
+    //       "component": "Layout",
+    //       "hidden": false,
+    //       "icon": "home-3-fill",
+    //       "isCustomSvg": false,
+    //       "noClosable": false,
+    //       "noKeepAlive": false,
+    //       "redirect": "/baseamis",
+    //       "tabHidden": false,
+    //       "title": "低代码"
+    //     },
+    //     "name": "AmisManage",
+    //     "url": "/baseamis"
+    //   }
+    // ]
     //  await getRouterList()
     const cookie = Cookies.get('dgiot_auth_token') !== 'undefined'
     // if (!results && cookie) {
@@ -220,7 +232,7 @@ const actions = {
     /**
      * 处理路由
      */
-    let data = _.merge(utilsRouter.compute(results, errorRoutes))
+    let data = _.merge(utilsRouter.compute(list, errorRoutes))
     console.log(data)
     if (data[data.length - 1].path !== '*') {
       routes = convertRouter(data)

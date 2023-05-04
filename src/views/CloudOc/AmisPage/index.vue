@@ -29,12 +29,12 @@
 </template>
 
 <script>
+  // TableEdit,
   import { getView, getAmisView } from '@/api/View'
   import topo from '@/views/CloudFunction/lowcode/components/dgiotKonva'
   export default {
     name: 'Index',
     components: {
-      TableEdit,
       topo,
     },
     props: {},

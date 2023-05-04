@@ -52,7 +52,7 @@ router.beforeEach(async (to, from, next) => {
       // 禁止已登录用户返回登录页
       if (to.path === '/login' || to.path === '/') {
         next({
-          path: '/design',
+          path: '/index',
         })
         if (showProgressBar) DgiotProgress.done()
       } else {
