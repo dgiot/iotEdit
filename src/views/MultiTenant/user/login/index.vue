@@ -456,7 +456,7 @@
             console.log('handleRoute 存在，跳转页面')
             const { results: Tree = [] } = await Roletree()
             this.setRoleTree(Tree)
-            await this.$router.push(this.handleRoute())
+            await this.$router.push({ path: '/design' })
             // clearInterval(this.interval)
             // window.clearInterval(this.interval)
           }

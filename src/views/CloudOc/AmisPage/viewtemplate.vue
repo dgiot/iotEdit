@@ -20,12 +20,8 @@
 
 <script>
   import { getView } from '@/api/View'
-  import TableEdit from '@/views/DeviceCloud/empty/tableEdit'
   export default {
     name: 'Viewtemplate',
-    components: {
-      TableEdit,
-    },
     props: {},
     data() {
       return {

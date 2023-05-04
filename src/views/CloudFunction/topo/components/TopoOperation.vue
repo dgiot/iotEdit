@@ -147,14 +147,12 @@
 </template>
 
 <script>
-  import wmxdetail from '@/views/DeviceCloud/manage/component/wmxdetail'
   import { putThing } from '@/api/Product/index'
   import { edit_konva_thing, get_konva_thing } from '@/api/Topo'
   import { mapGetters, mapMutations } from 'vuex'
 
   export default {
     name: 'Operation',
-    components: { wmxdetail },
     /* eslint-disable */
     props: {
       stopMqtt: {

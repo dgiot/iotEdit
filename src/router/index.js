@@ -16,33 +16,8 @@ import { publicPath, routerMode } from '@/config'
 
 export const constantRoutes = [
   {
-    path: '/quick',
-    component: () => import('@/views/MultiTenant/user/quick'),
-    hidden: true,
-  },
-  {
-    path: '/admin',
-    component: () => import('@/views/MultiTenant/user/admin'),
-    hidden: true,
-  },
-  {
-    path: '/dev',
-    component: () => import('@/views/MultiTenant/user/dev'),
-    hidden: true,
-  },
-  {
     path: '/login',
     component: () => import('@/views/MultiTenant/user/login'),
-    hidden: true,
-  },
-  {
-    path: '/jwtLogin',
-    component: () => import('@/views/MultiTenant/user/jwtlogin'),
-    hidden: true,
-  },
-  {
-    path: '/register',
-    component: () => import('@/views/MultiTenant/user/register'),
     hidden: true,
   },
   {
@@ -56,13 +31,8 @@ export const constantRoutes = [
     name: '404',
     component: () => import('@/views/404'),
     hidden: true,
-  },
-  {
-    path: '/feature',
-    name: 'feature',
-    component: () => import('@/views/feature/index'),
-    hidden: true,
-  },
+  }
+
 ]
 
 export const asyncRoutes = []

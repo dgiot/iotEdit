@@ -30,7 +30,6 @@
 
 <script>
   import { getView, getAmisView } from '@/api/View'
-  import TableEdit from '@/views/DeviceCloud/empty/tableEdit'
   import topo from '@/views/CloudFunction/lowcode/components/dgiotKonva'
   export default {
     name: 'Index',

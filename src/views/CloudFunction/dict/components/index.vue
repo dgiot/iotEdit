@@ -38,7 +38,6 @@
 </template>
 
 <script>
-  import dgiotDict from '@/views/CloudFunction/dict/components/dgiotDict'
   import dgiotRule from '@/views/CloudFunction/dict/components/dgiotRule'
   import dgiotWord from '@/views/CloudFunction/dict/components/dgiotWord'
   import { mapMutations } from 'vuex'

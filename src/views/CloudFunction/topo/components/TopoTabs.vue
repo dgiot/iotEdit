@@ -9,7 +9,7 @@
         @files="files"
       />
     </div>
-    <Thing />
+    <!-- <Thing /> -->
     <Amis />
     <div v-show="isDirver" style="margin: 0 auto; text-align: center">
       <Evidence />
@@ -908,7 +908,6 @@
   import createThing from '@/utils/konva/createThing'
   import { mapMutations, mapGetters } from 'vuex'
   import getSvgPath from '@/utils/konva/getSvgPath'
-  import Thing from '@/views/CloudFunction/topo/components/Thing'
   import Amis from '@/views/CloudFunction/topo/components/Amis'
   // import TopoThing from '@/views/topo/components/TopoThing'
   import Background from '@/views/CloudFunction/topo/components/Background'
@@ -939,7 +938,7 @@
   export default {
     name: 'TopoTabs',
     components: {
-      Thing,
+      // Thing,
       Amis,
       Background,
       Evidence,

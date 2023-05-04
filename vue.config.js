@@ -237,7 +237,7 @@ const configure = {
     FileSaver: 'file-saver',
     Multipane: 'vue-multipane',
     'js-cookie': 'Cookies',
-    'vue-baidu-map': 'VueBaiduMap',
+    // 'vue-baidu-map': 'VueBaiduMap',
     echarts: 'echarts',
     screenfull: 'screenfull',
     Qs: 'qs',

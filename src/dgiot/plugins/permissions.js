@@ -50,9 +50,9 @@ router.beforeEach(async (to, from, next) => {
       // 这里判断下存储的路由表  并且过滤掉白名单
       // dgiotlog.log(store.getters['routes/routes'])
       // 禁止已登录用户返回登录页
-      if (to.path === '/login') {
+      if (to.path === '/login' || to.path === '/') {
         next({
-          path: '/dashboard',
+          path: '/design',
         })
         if (showProgressBar) DgiotProgress.done()
       } else {

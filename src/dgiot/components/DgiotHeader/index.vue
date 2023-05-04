@@ -29,14 +29,14 @@
               v-show="isDeptShow"
               :title="$translateTitle(`home.department switch`)"
             />
-            <dgiot-error-log :title="$translateTitle(`home.error log`)" />
-            <dgiot-notice :title="$translateTitle(`home.notice`)" />
-            <dgiot-doc :title="$translateTitle(`home.full screen`)" />
-            <dgiot-full-screen :title="$translateTitle(`home.full screen`)" />
-            <dgiot-language
+            <!-- <dgiot-error-log :title="$translateTitle(`home.error log`)" /> -->
+            <!-- <dgiot-notice :title="$translateTitle(`home.notice`)" /> -->
+            <!-- <dgiot-doc :title="$translateTitle(`home.full screen`)" /> -->
+            <!-- <dgiot-full-screen :title="$translateTitle(`home.full screen`)" /> -->
+            <!-- <dgiot-language
               v-show="isShow"
               :title="$translateTitle(`home.language`)"
-            />
+            /> -->
             <dgiot-theme :title="$translateTitle(`home.theme`)" />
             <dgiot-refresh :title="$translateTitle(`home.refresh`)" />
             <dgiot-avatar
