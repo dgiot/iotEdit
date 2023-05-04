@@ -46,77 +46,6 @@
         </el-dialog>
       </div>
       <!-- 通用版本 -->
-      <div class="baidu_map bg_screen1">
-        <!-- 顶部数量 -->
-        <!-- <div class="screen_top">
-          <div class="screen_top_item">
-            <router-link to="/dashboard/productlist">
-              <p>{{ $translateTitle('home.pro_count') }}</p>
-              <p style="color: #f8a75c">{{ _product_count }}</p>
-            </router-link>
-          </div>
-          <div class="screen_top_item">
-            <router-link to="/roles/applicationManagement">
-              <p>{{ $translateTitle('home.app_count') }}</p>
-              <p style="color: #efdb75">{{ _app_count }}</p>
-            </router-link>
-          </div>
-          <div class="screen_top_item" @click="goDevice()">
-            <p>{{ $translateTitle('home.dev_count') }}</p>
-            <p style="color: #03fcfa">{{ _dev_count }}</p>
-          </div>
-          <div class="screen_top_item">
-            <router-link to="/CloudOt/alarm">
-              <p>
-                {{ $translateTitle('equipment.Total number of alarms') }}
-              </p>
-              <p style="color: #179fff">{{ warnCount }}</p>
-            </router-link>
-          </div>
-        </div> -->
-        <!-- 3d底图背景 -->
-
-        <!-- <div
-          id="screen_center_bg"
-          class="screen_center_center"
-          :style="{
-            backgroundImage: 'url(' + background + ')',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '100% 100%',
-          }"
-          @mouseenter="enter"
-          @mouseleave="leave"
-        ></div> -->
-        <!-- 底部设备列表 -->
-        <!-- <div class="screen_bottom">
-          <div class="screen_bottom_title">
-            {{ $translateTitle('equipment.list') }}
-          </div>
-          <screen-device :comp="comp" />
-        </div> -->
-        <!-- 右侧工单列表 -->
-        <!-- <div class="screen_right_center">
-          <div class="screen_right_center_top">工单列表</div>
-          <work-order :comp="comp" />
-        </div> -->
-        <!-- 告警列表 -->
-        <!-- <div class="screen_left_center">
-          <div class="screen_left_center_top">告警列表</div>
-          <topo-caltable :comp="comp" />
-        </div> -->
-
-        <!-- 饼图设备在线离线数 -->
-        <!-- <div class="screen_right_bottom">
-          <div class="screen_right_bottom_top">设备运行状况</div>
-          <ve-pie
-            :data="piechartData"
-            :extend="pieextend"
-            height="100%"
-            :settings="piechartSettings"
-            width="100%"
-          />
-        </div> -->
-      </div>
     </div>
   </div>
 </template>
@@ -451,7 +380,7 @@
       let list = []
       let isFirst = true
       results.forEach((item) => {
-        if (item.flag == 'Konva') {
+        if (item.type == 'Dashboard') {
           list.push(item)
           if (isFirst) {
             this.showType = 'Konva'
@@ -1099,7 +1028,7 @@
     z-index: 999;
     position: fixed;
     top: 70px;
-    right:10px;
+    right: 10px;
   }
   .dashboard_check {
     position: absolute;
